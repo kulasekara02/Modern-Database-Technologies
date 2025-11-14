@@ -1,0 +1,308 @@
+<mxfile host="app.diagrams.net" modified="2025-11-15T00:00:00.000Z" agent="Claude" version="24.0.0">
+  <diagram name="Youth Sports Club ERD" id="youth-sports-erd">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Club Entity -->
+        <mxCell id="club" value="&lt;b&gt;CLUB&lt;/b&gt;&lt;hr&gt;club_id (PK)&lt;br&gt;club_name&lt;br&gt;address&lt;br&gt;phone&lt;br&gt;email&lt;br&gt;established_date" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="80" y="40" width="160" height="120" as="geometry" />
+        </mxCell>
+        
+        <!-- Sport Entity -->
+        <mxCell id="sport" value="&lt;b&gt;SPORT&lt;/b&gt;&lt;hr&gt;sport_id (PK)&lt;br&gt;sport_name&lt;br&gt;sport_type&lt;br&gt;min_team_size&lt;br&gt;max_team_size&lt;br&gt;club_id (FK)" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="360" y="40" width="160" height="120" as="geometry" />
+        </mxCell>
+        
+        <!-- Season Entity -->
+        <mxCell id="season" value="&lt;b&gt;SEASON&lt;/b&gt;&lt;hr&gt;season_id (PK)&lt;br&gt;season_name&lt;br&gt;start_date&lt;br&gt;end_date&lt;br&gt;sport_id (FK)" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="640" y="40" width="160" height="120" as="geometry" />
+        </mxCell>
+        
+        <!-- Division Entity -->
+        <mxCell id="division" value="&lt;b&gt;DIVISION&lt;/b&gt;&lt;hr&gt;division_id (PK)&lt;br&gt;division_name&lt;br&gt;min_age&lt;br&gt;max_age&lt;br&gt;skill_level&lt;br&gt;season_id (FK)" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="920" y="40" width="160" height="120" as="geometry" />
+        </mxCell>
+        
+        <!-- Team Entity -->
+        <mxCell id="team" value="&lt;b&gt;TEAM&lt;/b&gt;&lt;hr&gt;team_id (PK)&lt;br&gt;team_name&lt;br&gt;team_color&lt;br&gt;max_roster_size&lt;br&gt;division_id (FK)" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="920" y="280" width="160" height="120" as="geometry" />
+        </mxCell>
+        
+        <!-- Player Entity -->
+        <mxCell id="player" value="&lt;b&gt;PLAYER&lt;/b&gt;&lt;hr&gt;player_id (PK)&lt;br&gt;first_name&lt;br&gt;last_name&lt;br&gt;birthdate&lt;br&gt;gender&lt;br&gt;medical_notes" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="640" y="520" width="160" height="120" as="geometry" />
+        </mxCell>
+        
+        <!-- Guardian Entity -->
+        <mxCell id="guardian" value="&lt;b&gt;GUARDIAN&lt;/b&gt;&lt;hr&gt;guardian_id (PK)&lt;br&gt;first_name&lt;br&gt;last_name&lt;br&gt;phone&lt;br&gt;email&lt;br&gt;address&lt;br&gt;relationship" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="360" y="520" width="160" height="140" as="geometry" />
+        </mxCell>
+        
+        <!-- Coach Entity -->
+        <mxCell id="coach" value="&lt;b&gt;COACH&lt;/b&gt;&lt;hr&gt;coach_id (PK)&lt;br&gt;first_name&lt;br&gt;last_name&lt;br&gt;phone&lt;br&gt;email&lt;br&gt;certification&lt;br&gt;certification_date" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="280" width="160" height="140" as="geometry" />
+        </mxCell>
+        
+        <!-- Venue Entity -->
+        <mxCell id="venue" value="&lt;b&gt;VENUE&lt;/b&gt;&lt;hr&gt;venue_id (PK)&lt;br&gt;venue_name&lt;br&gt;address&lt;br&gt;capacity&lt;br&gt;venue_type&lt;br&gt;surface_type" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="1480" y="520" width="160" height="120" as="geometry" />
+        </mxCell>
+        
+        <!-- Practice Entity -->
+        <mxCell id="practice" value="&lt;b&gt;PRACTICE&lt;/b&gt;&lt;hr&gt;practice_id (PK)&lt;br&gt;practice_date&lt;br&gt;start_time&lt;br&gt;end_time&lt;br&gt;attendance_count&lt;br&gt;team_id (FK)&lt;br&gt;venue_id (FK)" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="520" width="160" height="140" as="geometry" />
+        </mxCell>
+        
+        <!-- Match Entity -->
+        <mxCell id="match" value="&lt;b&gt;MATCH&lt;/b&gt;&lt;hr&gt;match_id (PK)&lt;br&gt;match_date&lt;br&gt;start_time&lt;br&gt;home_score&lt;br&gt;away_score&lt;br&gt;match_status&lt;br&gt;home_team_id (FK)&lt;br&gt;away_team_id (FK)&lt;br&gt;venue_id (FK)" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1480" y="280" width="160" height="180" as="geometry" />
+        </mxCell>
+        
+        <!-- Registration Entity -->
+        <mxCell id="registration" value="&lt;b&gt;REGISTRATION&lt;/b&gt;&lt;hr&gt;registration_id (PK)&lt;br&gt;registration_date&lt;br&gt;registration_status&lt;br&gt;fee_amount&lt;br&gt;player_id (FK)&lt;br&gt;season_id (FK)" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="640" y="760" width="160" height="140" as="geometry" />
+        </mxCell>
+        
+        <!-- Payment Entity -->
+        <mxCell id="payment" value="&lt;b&gt;PAYMENT&lt;/b&gt;&lt;hr&gt;payment_id (PK)&lt;br&gt;payment_date&lt;br&gt;payment_amount&lt;br&gt;payment_method&lt;br&gt;payment_status&lt;br&gt;registration_id (FK)" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="360" y="760" width="160" height="140" as="geometry" />
+        </mxCell>
+        
+        <!-- Roster Associative Entity -->
+        <mxCell id="roster" value="&lt;b&gt;ROSTER&lt;/b&gt;&lt;hr&gt;roster_id (PK)&lt;br&gt;player_id (FK)&lt;br&gt;team_id (FK)&lt;br&gt;jersey_number&lt;br&gt;position&lt;br&gt;join_date" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="920" y="520" width="160" height="120" as="geometry" />
+        </mxCell>
+        
+        <!-- Player_Guardian Associative Entity -->
+        <mxCell id="player_guardian" value="&lt;b&gt;PLAYER_GUARDIAN&lt;/b&gt;&lt;hr&gt;pg_id (PK)&lt;br&gt;player_id (FK)&lt;br&gt;guardian_id (FK)&lt;br&gt;is_primary&lt;br&gt;relationship_type" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="500" y="680" width="160" height="120" as="geometry" />
+        </mxCell>
+        
+        <!-- Team_Coach Associative Entity -->
+        <mxCell id="team_coach" value="&lt;b&gt;TEAM_COACH&lt;/b&gt;&lt;hr&gt;tc_id (PK)&lt;br&gt;team_id (FK)&lt;br&gt;coach_id (FK)&lt;br&gt;coach_role&lt;br&gt;assignment_date" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="380" width="160" height="120" as="geometry" />
+        </mxCell>
+        
+        <!-- Relationships -->
+        
+        <!-- Club to Sport (1:M) -->
+        <mxCell id="rel1" value="" style="endArrow=ERmany;startArrow=ERone;html=1;startFill=0;endFill=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="club" target="sport">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel1_label" value="offers" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="rel1">
+          <mxGeometry x="-0.1" y="2" relative="1" as="geometry">
+            <mxPoint x="5" y="-8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Sport to Season (1:M) -->
+        <mxCell id="rel2" value="" style="endArrow=ERmany;startArrow=ERzeroToOne;html=1;startFill=0;endFill=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="sport" target="season">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel2_label" value="runs across" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="rel2">
+          <mxGeometry x="-0.1" y="2" relative="1" as="geometry">
+            <mxPoint x="10" y="-8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Season to Division (1:M) -->
+        <mxCell id="rel3" value="" style="endArrow=ERmany;startArrow=ERone;html=1;startFill=0;endFill=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="season" target="division">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel3_label" value="contains" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="rel3">
+          <mxGeometry x="-0.1" y="2" relative="1" as="geometry">
+            <mxPoint x="5" y="-8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Division to Team (1:M) -->
+        <mxCell id="rel4" value="" style="endArrow=ERmany;startArrow=ERone;html=1;startFill=0;endFill=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="division" target="team">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel4_label" value="has" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="rel4">
+          <mxGeometry x="-0.1" y="2" relative="1" as="geometry">
+            <mxPoint x="20" y="5" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Team to Roster (1:M) -->
+        <mxCell id="rel5" value="" style="endArrow=ERmany;startArrow=ERone;html=1;startFill=0;endFill=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="team" target="roster">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel5_label" value="has roster" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="rel5">
+          <mxGeometry x="-0.1" y="2" relative="1" as="geometry">
+            <mxPoint x="25" y="5" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Player to Roster (1:M) -->
+        <mxCell id="rel6" value="" style="endArrow=ERmany;startArrow=ERzeroToOne;html=1;startFill=0;endFill=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="player" target="roster">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel6_label" value="assigned to" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="rel6">
+          <mxGeometry x="-0.1" y="2" relative="1" as="geometry">
+            <mxPoint x="15" y="-8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Player to Player_Guardian (1:M) -->
+        <mxCell id="rel7" value="" style="endArrow=ERmany;startArrow=ERone;html=1;startFill=0;endFill=0;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="player" target="player_guardian">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel7_label" value="has guardians" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="rel7">
+          <mxGeometry x="-0.1" y="2" relative="1" as="geometry">
+            <mxPoint x="15" y="-8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Guardian to Player_Guardian (1:M) -->
+        <mxCell id="rel8" value="" style="endArrow=ERmany;startArrow=ERone;html=1;startFill=0;endFill=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="guardian" target="player_guardian">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel8_label" value="oversees" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="rel8">
+          <mxGeometry x="-0.1" y="2" relative="1" as="geometry">
+            <mxPoint x="-20" y="5" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Team to Team_Coach (1:M) -->
+        <mxCell id="rel9" value="" style="endArrow=ERmany;startArrow=ERone;html=1;startFill=0;endFill=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="team" target="team_coach">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel9_label" value="coached by" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="rel9">
+          <mxGeometry x="-0.1" y="2" relative="1" as="geometry">
+            <mxPoint x="10" y="-8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Coach to Team_Coach (1:M) -->
+        <mxCell id="rel10" value="" style="endArrow=ERmany;startArrow=ERone;html=1;startFill=0;endFill=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="coach" target="team_coach">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel10_label" value="assigned to" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="rel10">
+          <mxGeometry x="-0.1" y="2" relative="1" as="geometry">
+            <mxPoint x="-5" y="-8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Team to Practice (1:M) -->
+        <mxCell id="rel11" value="" style="endArrow=ERmany;startArrow=ERone;html=1;startFill=0;endFill=0;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="team" target="practice">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel11_label" value="conducts" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="rel11">
+          <mxGeometry x="-0.1" y="2" relative="1" as="geometry">
+            <mxPoint x="10" y="-8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Venue to Practice (1:M) -->
+        <mxCell id="rel12" value="" style="endArrow=ERmany;startArrow=ERzeroToOne;html=1;startFill=0;endFill=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="venue" target="practice">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel12_label" value="hosts practice" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="rel12">
+          <mxGeometry x="-0.1" y="2" relative="1" as="geometry">
+            <mxPoint x="-15" y="-8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Team to Match (Home) (1:M) -->
+        <mxCell id="rel13" value="" style="endArrow=ERmany;startArrow=ERone;html=1;startFill=0;endFill=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="team" target="match">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel13_label" value="plays home" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="rel13">
+          <mxGeometry x="-0.1" y="2" relative="1" as="geometry">
+            <mxPoint x="120" y="-8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Team to Match (Away) (1:M) -->
+        <mxCell id="rel14" value="" style="endArrow=ERmany;startArrow=ERone;html=1;startFill=0;endFill=0;exitX=1;exitY=0.35;exitDx=0;exitDy=0;entryX=0;entryY=0.4;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="team" target="match">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel14_label" value="plays away" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="rel14">
+          <mxGeometry x="-0.1" y="2" relative="1" as="geometry">
+            <mxPoint x="120" y="8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Venue to Match (1:M) -->
+        <mxCell id="rel15" value="" style="endArrow=ERmany;startArrow=ERzeroToOne;html=1;startFill=0;endFill=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="venue" target="match">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel15_label" value="hosts match" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="rel15">
+          <mxGeometry x="-0.1" y="2" relative="1" as="geometry">
+            <mxPoint x="25" y="5" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Player to Registration (1:M) -->
+        <mxCell id="rel16" value="" style="endArrow=ERmany;startArrow=ERone;html=1;startFill=0;endFill=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="player" target="registration">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel16_label" value="registers for" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="rel16">
+          <mxGeometry x="-0.1" y="2" relative="1" as="geometry">
+            <mxPoint x="30" y="5" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Season to Registration (1:M) -->
+        <mxCell id="rel17" value="" style="endArrow=ERmany;startArrow=ERone;html=1;startFill=0;endFill=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="season" target="registration">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="680" y="200" />
+              <mxPoint x="880" y="200" />
+              <mxPoint x="880" y="720" />
+              <mxPoint x="760" y="720" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel17_label" value="season for" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="rel17">
+          <mxGeometry x="-0.1" y="2" relative="1" as="geometry">
+            <mxPoint x="25" y="-95" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Registration to Payment (1:M) -->
+        <mxCell id="rel18" value="" style="endArrow=ERmany;startArrow=ERone;html=1;startFill=0;endFill=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="registration" target="payment">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel18_label" value="has payments" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="rel18">
+          <mxGeometry x="-0.1" y="2" relative="1" as="geometry">
+            <mxPoint x="15" y="-8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Legend -->
+        <mxCell id="legend_box" value="&lt;b&gt;LEGEND&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=top;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="80" y="280" width="200" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="legend1" value="Core Entities (Club, Sport, etc.)" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="90" y="310" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="legend2" value="People Entities" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="90" y="350" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="legend3" value="Activity Entities" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="90" y="390" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="legend4" value="Financial Entities" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="90" y="430" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="legend5" value="Associative/Junction Entities" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="90" y="470" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="legend6" value="Venue Entity" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="90" y="510" width="180" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Notes Box -->
+        <mxCell id="notes_box" value="&lt;b&gt;KEY NOTES&lt;/b&gt;&lt;hr&gt;• PK = Primary Key&lt;br&gt;• FK = Foreign Key&lt;br&gt;• Crow's Foot Notation Used&lt;br&gt;• Min/Max cardinalities enforced via business rules&lt;br&gt;• ROSTER links Players to Teams (M:N)&lt;br&gt;• PLAYER_GUARDIAN links Players to Guardians (M:N)&lt;br&gt;• TEAM_COACH links Teams to Coaches with role attribute&lt;br&gt;• MATCH has two FKs to TEAM (home/away)" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="80" y="760" width="200" height="220" as="geometry" />
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
